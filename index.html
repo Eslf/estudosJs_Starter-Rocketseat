@@ -1,25 +1,38 @@
 <html>
 
 <head>
+    <meta charset="UTF-8">
     <title>Curso JavaScript</title>
 </head>
 
     <body>
         
+    <div id="app">
+        
+        <div class="box">
+
+        </div>
+
+    </div>
+
         <script>
             // Código JavaScript
             
-            var endereco = { 
-                rua: "Rua dos Pinheiros",
-                numero: 1293,
-                bairro: "Centro",
-                cidade: "São Paulo",
-                uf: "SP"
-            };
+            // var linkElement = document.createElement('a');
+            // linkElement.setAttribute('href', 'http://rocketseat.com.br');
+            // linkElement.setAttribute('target','_blank');
 
-            console.log("O usuário mora em "+endereco.cidade+" / "+
-            endereco.uf+", no bairro "+endereco.bairro+
-            ", na rua \""+endereco.rua+"\" com o n\u00BA "+endereco.numero+".");
+            // var textElement = document.createTextNode('Acessar o site da RocketSeat');
+            // linkElement.appendChild(textElement);
+
+            var containerElement = document.getElementById('app');
+            
+            var boxElement = document.querySelector('.box');
+
+            boxElement.style.width = 100;
+            boxElement.style.height = 100;
+            boxElement.style.backgroundColor = '#f00';
+
 
         </script>
 

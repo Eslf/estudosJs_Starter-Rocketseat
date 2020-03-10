@@ -1,0 +1,95 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Curso JavaScript</title>
+</head>
+
+    <body>
+        
+         <!-- 1º Exercício e 2º Exercício -->
+
+        <div id="ex01">
+            <button onclick="criarQuadrado()" id="ex01_button">Criar Quadrado</button>
+        </div>
+
+        <!--  -->
+
+        <script>
+            // Código JavaScript
+            
+            // 1º Exercício
+            var containerEx01 = document.querySelector('#ex01');
+            function criarQuadrado(){
+                
+                var quadrado = document.createElement('div');
+                quadrado.setAttribute('class','box');
+                quadrado.setAttribute('onmouseover','mudaCor(this)');
+                quadrado.style.width = '100px';
+                quadrado.style.height = '100px';
+                quadrado.style.backgroundColor = '#f00';
+                quadrado.style.margin = '5px';
+
+                containerEx01.appendChild(quadrado);
+            } 
+
+            // 2º Exercício
+
+            function mudaCor(q){
+                q.style.backgroundColor = getRandomColor();
+            }
+
+            function getRandomColor() {
+                var letters = "0123456789ABCDEF";
+                var color = "#";
+                for (var i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+                }
+                console.log('Entrou no RandomColor');
+                return color;
+            }
+
+            // 3º Exercício
+
+            var nomes = ["Diego", "Gabriel", "Lucas"];
+
+            var lista = document.createElement('ul');
+
+            containerEx01.appendChild(lista);
+
+            for (var i = 0;i<nomes.length;i++){
+                var li = document.createElement('li'); 
+
+                lista.appendChild(li);
+                li.innerText = li.innerText + nomes[i];
+            }
+
+
+            // 4º Exercício
+
+            var botaoLista = document.createElement('button');
+            botaoLista.setAttribute('onclick','addLista()');
+            var textElement = document.createTextNode('Inserir na lista');
+            botaoLista.appendChild(textElement);
+
+            var inputLista = document.createElement('input');
+            inputLista.setAttribute('type','text');
+            inputLista.setAttribute('name','nome');
+
+            containerEx01.appendChild(inputLista);
+            containerEx01.appendChild(botaoLista);
+            
+
+            function addLista(){
+                var liAdd = document.createElement('li');
+
+                lista.appendChild(liAdd);
+
+                liAdd.innerText = liAdd.innerHTML + inputLista.value;
+            }
+            
+
+        </script>
+
+    </body>
+</html>
